@@ -1,76 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Choose Your Own Adventure</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="story">
-      <h1>Welcome to the Adventure!</h1>
-      <p>You find yourself at a crossroads...</p>
-      <button onclick="startStory()">Start your adventure</button>
+    <h1>Choose Your Own Adventure</h1>
+    <hr />
+    <div id="story-container">
+      <p>You find yourself at the entrance of a mysterious forest.</p>
+      <p>
+        Do you want to enter the forest? <input type="text" id="choiceInput" />
+        <button onclick="enterForest()">Submit</button>
+      </p>
     </div>
-
-    <script>
-      function startStory() {
-        document.getElementById("story").innerHTML = `
-        <h1>The Crossroads</h1>
-        <p>You stand at a crossroads. To the left, a narrow path disappears into a dark forest. To the right, a bridge spans a rushing river.</p>
-        <button onclick="leftPath()">Take the left path</button>
-        <button onclick="rightBridge()">Cross the bridge</button>
-      `;
-      }
-
-      function leftPath() {
-        document.getElementById("story").innerHTML = `
-        <h1>The Dark Forest</h1>
-        <p>You enter the forest. The trees loom overhead, casting eerie shadows. You hear strange noises in the distance.</p>
-        <button onclick="followNoises()">Follow the noises</button>
-        <button onclick="turnBack()">Turn back</button>
-      `;
-      }
-
-      function rightBridge() {
-        document.getElementById("story").innerHTML = `
-        <h1>The Bridge</h1>
-        <p>You cross the bridge and see a magnificent castle in the distance. But the bridge collapses behind you!</p>
-        <button onclick="castle()">Head to the castle</button>
-        <button onclick="swim()">Swim across the river</button>
-      `;
-      }
-
-      function followNoises() {
-        document.getElementById("story").innerHTML = `
-        <h1>The Mystery</h1>
-        <p>You follow the noises and encounter a friendly forest creature that leads you to safety.</p>
-        <button onclick="startStory()">Start Over</button>
-      `;
-      }
-
-      function turnBack() {
-        document.getElementById("story").innerHTML = `
-        <h1>Backtracking</h1>
-        <p>You decide to turn back and head to the crossroads.</p>
-        <button onclick="startStory()">Start Over</button>
-      `;
-      }
-
-      function castle() {
-        document.getElementById("story").innerHTML = `
-        <h1>The Castle</h1>
-        <p>You reach the castle and are greeted by the king, who offers you a quest.</p>
-        <p>More is on the way..</p>
-        <button onclick="startStory()">Start Over</button>
-      `;
-      }
-
-      function swim() {
-        document.getElementById("story").innerHTML = `
-        <h1>The River</h1>
-        <p>You attempt to swim across but are swept away by the strong current.</p>
-        <button onclick="startStory()">Start Over</button>
-      `;
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
